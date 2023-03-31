@@ -48,6 +48,11 @@ logagent：
     
 
 
+项目描述：
+1.不同业务线的配置放在etcd上面
+2.不同的业务线单独的一个topic
+3.通过logagent，把日志发往kafka上面
+4.使用etcd的watch实现配置热加载
 
 
 

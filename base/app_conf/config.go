@@ -1,31 +1,22 @@
 package app_conf
 
-//mysql  config
-type AppMysql struct {
-	Address  string `ini:"address"`
-	Database string `ini:"database"`
-	Username string `ini:"username"`
-	Password string `ini:"password"`
-}
-
-//redis  config
-
 //kafka  config
 type KafkaConf struct {
+	Address     string `ini:"address"`
+	ChanMaxSize int    `ini:"chanmaxsize"`
+}
+
+//etcd  config
+type EtcdConf struct {
 	Address string `ini:"address"`
-	Topic   string `ini:"topic"`
+	Key     string `ini:"key"`
+	Timeout int    `ini:"timeout"`
 }
 
-//tailflog   config
-type TaillogConf struct {
-	FileName string `ini:"fileName"`
-}
-
-//kafka  , taillog , mysql config
+//kafka  , etcd config
 type AppConf struct {
-	KafkaConf   `ini:"kafka"`
-	TaillogConf `ini:"taillog"`
-	AppMysql    `ini:"mysql"`
+	KafkaConf `ini:"kafka"`
+	EtcdConf  `ini:"etcd"`
 }
 
 //
